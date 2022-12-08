@@ -37,8 +37,8 @@ func main() {
 // finally a slice of books by var
 
 type book struct {
-	Isbn string `"json:isbn`
-	Name string `"json:name`
+	Isbn string `json:"isbn"`
+	Name string `json:"name"`
 }
 
 var bList []book = []book{}
@@ -87,3 +87,17 @@ func handeleBooks(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+// we will send a post to our server and add a book to it by Postman
+// in postman in section post , http://localhost:8080/book
+// by type json
+// postman shows this by select json type instead text in body
+// {
+// 	""
+// }
+
+// it will fulfill like this:
+// {
+// 	"isbn": "123",
+// 	"booknmae": "Freedom"
+// }
