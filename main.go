@@ -101,3 +101,5 @@ func handeleBooks(w http.ResponseWriter, r *http.Request) {
 // 	"isbn": "123",
 // 	"booknmae": "Freedom"
 // }
+
+// in localhost we can see added books
