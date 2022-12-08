@@ -69,6 +69,18 @@ func handeleBooks(w http.ResponseWriter, r *http.Request) {
 		// we define a varibale named newbook in tpe book
 		// and use its address
 
+		// add book to our list
+		for _, b := range bList {
+			if b.Isbn == mewBook.Isbn {
+				w.WriterHeader(http.StatusBadRequest)
+				return
+			}
+		}
+
+		bList = append(bList, newBook)
+		w.WriteHeader(http.StatusAccepted)
+		return
+
 	default:
 		// if method isnt post and get , return an error for us
 		w.WriteHeader(http.StatusBadRequest)
